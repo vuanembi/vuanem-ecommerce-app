@@ -1,0 +1,44 @@
+{
+  "unpublishedCollection": {
+    "name": "Theme",
+    "pageId": "EcommerceOrder",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tshopee: '#DD4B34',\n\tlazada: '#F86A2B',\n\ttiki: '#38AFF4',\n\tpending: '#3366FF',\n\tcreated: '#03b365',\n\tclosed: '#DD4B34',\n\tborderRadius: 5,\n}\n",
+    "variables": [
+      {
+        "name": "shopee",
+        "value": "#DD4B34"
+      },
+      {
+        "name": "lazada",
+        "value": "#F86A2B"
+      },
+      {
+        "name": "tiki",
+        "value": "#38AFF4"
+      },
+      {
+        "name": "pending",
+        "value": "#3366FF"
+      },
+      {
+        "name": "created",
+        "value": "#03b365"
+      },
+      {
+        "name": "closed",
+        "value": "#DD4B34"
+      },
+      {
+        "name": "borderRadius",
+        "value": 5
+      }
+    ]
+  },
+  "id": "EcommerceOrder_Theme",
+  "deleted": false,
+  "gitSyncId": "61f7b0eb0b60b26d9ef9b353_61fcde657de45717ae6f0e0f"
+}

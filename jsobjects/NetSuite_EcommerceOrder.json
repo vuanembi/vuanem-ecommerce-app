@@ -1,0 +1,50 @@
+{
+  "unpublishedCollection": {
+    "name": "NetSuite",
+    "pageId": "EcommerceOrder",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tdeliverLocation: [\n\t\t{\n\t\t\tlabel: 'Cầu Diễn',\n\t\t\tvalue: 50,\n\t\t},\n\t\t{\n\t\t\tlabel: 'Hóc Môn',\n\t\t\tvalue: 287,\n\t\t}\n\t],\n\texpectedDeliveryTime: [\n\t\t{\n\t\t\tlabel: 'Sáng',\n\t\t\tvalue: 1,\n\t\t},\n\t\t{\n\t\t\tlabel: 'Chiều',\n\t\t\tvalue: 2,\n\t\t},\n\t\t{\n\t\t\tlabel: 'Tối',\n\t\t\tvalue: 3,\n\t\t},\n\t\t{\n\t\t\tlabel: 'Online',\n\t\t\tvalue: 4,\n\t\t},\n\t],\n\tsalesOrderURL: (id) => `https://4975572.app.netsuite.com/app/accounting/transactions/salesord.nl?id=${id}`,\n\tbuildItem: (item, quantity, amount, location, deliverLocation) => ({\n\t\titem,\n\t\tquantity,\n\t\tamount,\n\t\tlocation,\n\t\tcustcol_deliver_location: deliverLocation,\n\t\tcommitinventory: 3,\n\t\tprice: -1\n\t}),\n\tbuildCustomer: (phone, name) => ({\n\t\t\"custbody_customer_phone\": phone,\n    \"custbody_recipient_phone\": phone,\n    \"custbody_recipient\": name,\n    \"shippingaddress\": {\n        \"addressee\": name,\n    }\n\t}),\n}",
+    "variables": [
+      {
+        "name": "deliverLocation",
+        "value": [
+          {
+            "label": "Cầu Diễn",
+            "value": 50
+          },
+          {
+            "label": "Hóc Môn",
+            "value": 287
+          }
+        ]
+      },
+      {
+        "name": "expectedDeliveryTime",
+        "value": [
+          {
+            "label": "Sáng",
+            "value": 1
+          },
+          {
+            "label": "Chiều",
+            "value": 1
+          },
+          {
+            "label": "Tối",
+            "value": 3
+          },
+          {
+            "label": "Online",
+            "value": 4
+          }
+        ]
+      }
+    ]
+  },
+  "id": "EcommerceOrder_NetSuite",
+  "deleted": false,
+  "gitSyncId": "61f7b0eb0b60b26d9ef9b353_61f960a77de45717ae6f0de9"
+}

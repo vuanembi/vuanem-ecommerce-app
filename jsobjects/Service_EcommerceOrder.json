@@ -1,0 +1,20 @@
+{
+  "unpublishedCollection": {
+    "name": "Service",
+    "pageId": "EcommerceOrder",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\turl: \"https://us-central1-voltaic-country-280607.cloudfunctions.net/vuanem-ecommerce-service/netsuite/restlet\",\n\t//url: \"https://webhook.site/d3841048-d6b5-4df3-bfa5-0ce92b30495a\"\n}",
+    "variables": [
+      {
+        "name": "url",
+        "value": "https://us-central1-voltaic-country-280607.cloudfunctions.net/vuanem-ecommerce-service/netsuite/restlet"
+      }
+    ]
+  },
+  "id": "EcommerceOrder_Service",
+  "deleted": false,
+  "gitSyncId": "61f7b0eb0b60b26d9ef9b353_61fcdbb47de45717ae6f0e09"
+}

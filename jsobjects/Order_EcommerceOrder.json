@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Order",
+    "pageId": "EcommerceOrder",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\taddItem: () => {\n\t\tupdateOrder.run(\n\t\t\t() => {\n\t\t\t\tshowAlert('Added', 'success');\n\t\t\t\tcloseModal('ItemModal');\n\t\t\t\tgetOrder.run();\n\t\t\t},\n\t\t\t(err) => {\n\t\t\t\tshowAlert(err, 'error');\n\t\t\t\tconsole.log(err);\n\t\t\t},\n\t\t\t{\n\t\t\t\torder: {\n\t\t\t\t\t...getOrder.data.order,\n\t\t\t\t\titem: [\n\t\t\t\t\t\t...getOrder.data.order.item,\n\t\t\t\t\t\tNetSuite.buildItem(\n\t\t\t\t\t\t\tItemID.text,\n\t\t\t\t\t\t\tItemQuantity.text,\n\t\t\t\t\t\t\tparseInt(ItemAmount.text) / 1.08,\n\t\t\t\t\t\t\tItemLocation.text,\n\t\t\t\t\t\t\tparseInt(ItemDLVRLocation.selectedOptionValue || ItemDLVRLocation.options[0].value),\n\t\t\t\t\t\t)\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t)\n\t},\n\tremoveItem: () => {\n\t\tupdateOrder.run(\n\t\t\t() => {\n\t\t\t\tshowAlert('Removed', 'success');\n\t\t\t\tgetOrder.run();\n\t\t\t},\n\t\t\t(err) => {\n\t\t\t\tshowAlert(err, 'error');\n\t\t\t\tconsole.log(err);\n\t\t\t},\n\t\t\t{\n\t\t\t\torder: {\n\t\t\t\t\t...getOrder.data.order,\n\t\t\t\t\titem: getOrder.data.order.item.filter((i) => !_.isEqual(i, OrderItems.triggeredRow)),\n\t\t\t\t}\n\t\t\t}\n\t\t)\n\t},\n\tupdateDetail: () => {\n\t\tupdateOrder.run(\n\t\t\t() => {\n\t\t\t\tshowAlert('Updated', 'success');\n\t\t\t\tgetOrder.run();\n\t\t\t},\n\t\t\t(err) => {\n\t\t\t\tshowAlert(err, 'error');\n\t\t\t\tconsole.log(err);\n\t\t\t},\n\t\t\t{\n\t\t\t\torder: {\n\t\t\t\t\t...getOrder.data.order,\n\t\t\t\t\t...NetSuite.buildCustomer(OrderPhone.text, OrderCustomerName.text),\n\t\t\t\t\tmemo: OrderMemo.text,\n\t\t\t\t\tcustbody_expecteddeliverytime: OrderExpectedDeliveryTime.selectedOptionValue,\n\t\t\t\t\tshipdate: OrderShipDate.formattedDate,\n\t\t\t\t}\n\t\t\t}\n\t\t)\n\t},\n}",
+    "variables": []
+  },
+  "id": "EcommerceOrder_Order",
+  "deleted": false,
+  "gitSyncId": "61f7b0eb0b60b26d9ef9b353_61fa3dcb7de45717ae6f0df1"
+}
